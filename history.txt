@@ -1,0 +1,1000 @@
+  194  emacs test-expr.smpl 
+  195  ./simple < test-expr.smpl 
+  196  ./simple < test-expr.smpl > test.output 
+  197  diff test-expr.dot test.output 
+  198  emacs constantfolding.cpp
+  199  make clean
+  200  make
+  201  ./simple < test-expr.smpl > test.output 
+  202  diff test-expr.dot test.output 
+  203  emacs constantfolding.cpp
+  204  make clean
+  205  make
+  206  ./simple < test-expr.smpl > test.output 
+  207  diff test-expr.dot test.output 
+  208  emacs test-expr.dot 
+  209  emacs test-expr.smpl 
+  210  make clean
+  211  make
+  212  ./simple < test-expr.smpl > test.output 
+  213  diff test-expr.dot test.output 
+  214  emacs test-expr.smpl 
+  215  make clean
+  216  make
+  217  ./simple < test-expr.smpl > test.output 
+  218  diff test-expr.dot test.output 
+  219  emacs constantfolding.cpp
+  220  dot -Tpdf < test-expr.dot > test-expr.pdf
+  221  emacs constantfolding.cpp
+  222  ./simple < test-expr.smpl > test.output 
+  223  dot -Tpdf < test.output > myTest.pdf
+  224  emacs constantfolding.cpp
+  225  make clean
+  226  ls
+  227  make
+  228  ./simple < test-expr.smpl > test.output 
+  229  diff test.output test-expr.dot 
+  230  emacs README.txt
+  231  cd ..
+  232  turnin proj4@cs160 typecheck
+  233  ll
+  234  cd typecheck
+  235  ls
+  236  cd ..
+  237  turnin proj4@cs160 typecheck
+  238  ls
+  239  cd cs160
+  240  ls
+  241  cd typecheck
+  242  ls
+  243  emacs constantfolding.cpp
+  244  ls
+  245  cd cs160
+  246  ls
+  247  cd codegen
+  248  ls
+  249  cd cs160
+  250  ls
+  251  cd codegen/
+  252  ls
+  253  emacs codegen.cpp 
+  254  cat compilesample.sh 
+  255  cat start.c
+  256  emacs codegen.cpp 
+  257  exit
+  258  ls
+  259  cd cs160
+  260  ls
+  261  cd codegen
+  262  ls
+  263  emacs codegen.cpp
+  264  ls
+  265  cd cs160
+  266  ls
+  267  cd codegen
+  268  ls
+  269  emacs codegen.cpp
+  270  emacs typecheck.cpp 
+  271  emacs newTypecheck.cpp
+  272  cp newTypecheck.cpp typecheck.cpp 
+  273  ls
+  274  emacs typecheck.cpp 
+  275  emacs newConstantfolding.cpp
+  276  cp newConstantfolding.cpp constantfolding.cpp 
+  277  emacs constantfolding.cpp 
+  278  ls
+  279  emacs codegen.cpp
+  280  ls
+  281  emacs newTypecheck.cpp 
+  282  cp newTypecheck.cpp typecheck.cpp 
+  283  emacs constantfolding.cpp 
+  284  ls
+  285  cd cs160
+  286  ls
+  287  cd codegen
+  288  ls
+  289  emacs codegen.cpp
+  290  emacs test.cpp
+  291  gcc test.cpp
+  292  emacs test.cpp 
+  293  gcc test.cpp
+  294  emacs test.cpp
+  295  cat Makefile
+  296  emacs test.cpp
+  297  emacs codegen.cpp
+  298  g++ test.cpp
+  299  ll
+  300  objump -d test.cpp > disassembly.s
+  301  objdump -d test.cpp > disassembly.s
+  302  g++ -m32 test.cpp
+  303  ls
+  304  objump -d test.cpp > disassembly.s
+  305  objdump -d test.cpp > disassembly.s
+  306  cp test.cpp test.c
+  307  gcc test.c
+  308  objdump -d test.c > disassembly.s
+  309  ll
+  310  gcc -m32 test.c
+  311  ll
+  312  ls
+  313  cd cs160
+  314  ls
+  315  cd codegen
+  316  ls
+  317  emacs codegen.cpp&
+  318  ll
+  319  emacs symtab.cpp&
+  320  ll
+  321  emacs ast.cdef 
+  322  make clean
+  323  make
+  324  emacs attribute.hpp 
+  325  ll
+  326  cat parser.hpp
+  327  ll
+  328  emacs symtab.cpp 
+  329  grep "Ident" *
+  330  emacs ast.hpp
+  331  grep "SymName" *
+  332  emacs symtab.cpp 
+  333  grep "get_offset" *
+  334  emacs symtab.cpp 
+  335  ls
+  336  cd cs160
+  337  ls
+  338  cd codegen
+  339  ls
+  340  emacs codegen.cpp
+  341  exit
+  342  ls
+  343  cd cs160
+  344  ls
+  345  cd codegen/
+  346  ls
+  347  emacs codegen.cpp
+  348  ls
+  349  cd cs160
+  350  ls
+  351  cd codegen/
+  352  ls
+  353  emacs codegen.cpp
+  354  ls
+  355  emacs codegen.cpp
+  356  exit
+  357  ls
+  358  cd cs160
+  359  ls
+  360  cd codegen/
+  361  ls
+  362  emacs codegen.cpp
+  363  grep "scopesize" *
+  364  emacs codegen.cpp
+  365  emacs symtab.cpp 
+  366  emacs codegen.cpp
+  367  emacs symtab.cpp 
+  368  emacs codegen.cpp
+  369  exit
+  370  ls
+  371  cd cs160
+  372  ls
+  373  cd codegen/
+  374  ls
+  375  emacs codegen.cpp
+  376  exit
+  377  ls
+  378  cd cs160
+  379  sl
+  380  ls
+  381  cd codegen/
+  382  ls
+  383  emacs codegen.cpp
+  384  emacs codegen.cpp&
+  385  emacs symtab.hpp 
+  386  emacs codegen.cpp&
+  387  ls
+  388  cd cs160
+  389  ls
+  390  cd code
+  391  cd codegen/
+  392  ls
+  393  emacs codegen.cpp&
+  394  cd cs160
+  395  cd codegen/
+  396  emacs codegen.cpp&
+  397  ls
+  398  cd cs160
+  399  ls
+  400  cd codegen/
+  401  ls
+  402  emacs codegen.cpp
+  403  emacs codegen.cpp&
+  404  ll
+  405  grep "accept" *
+  406  emacs ast.cdef 
+  407  emacs ast.hpp 
+  408  cd ..
+  409  ls
+  410  cd typecheck/
+  411  ls
+  412  make clena
+  413  make clean
+  414  ]make
+  415  make
+  416  ll
+  417  ./simple < error1.simple 
+  418  cd ..
+  419  ls
+  420  cd codegen/
+  421  ls
+  422  emacs codegen.cpp&
+  423  cd ..
+  424  cd typecheck/
+  425  ls
+  426  emacs typecheck.cpp
+  427  cd ..
+  428  ls
+  429  cd codegen/
+  430  ls
+  431  emacs codegen.cpp
+  432  emacs cExample.c
+  433  gcc cExample.c 
+  434  emacs cExample.c 
+  435  gcc cExample.c 
+  436  gcc -m32 cExample.c 
+  437  ll
+  438  objdump -d cExample.c > disassembly.s
+  439  gcc -m32 cExample.c -o cExample
+  440  objdump -d cExample > disassembly.s
+  441  cat disassembly.s 
+  442  ls
+  443  history
+  444  emacs assemblyHelp.txt
+  445  ls
+  446  cd cs160
+  447  ls
+  448  cd codegen/
+  449  ls
+  450  emacs codegen.cpp&
+  451  cat disassembly.s 
+  452  cat cExample.c
+  453  emacs ast.hpp 
+  454  cat disassembly.s 
+  455  emacs assemblyHelp.txt
+  456  emacs cExample.c
+  457  cat assemblyHelp.txt
+  458  ll
+  459  ll *.c
+  460  ll *.txt
+  461  ll
+  462  history
+  463  emacs assemblyHelp.txt
+  464  cat assemblyHelp.txt 
+  465  gcc -m32 cExample.c -o cExample
+  466  objdump -d cExample > disassembly.s 
+  467  cat disassembly.s 
+  468  emacs cExample.c
+  469  emacs aTest.simple
+  470  make
+  471  emacs typecheck.cpp 
+  472  grep -r "class Typecheck"
+  473  emacs typecheck.cpp 
+  474  rm typecheck.cpp 
+  475  ls
+  476  emacs newTypecheck.cpp
+  477  emacs codegen.cpp
+  478  ls
+  479  cd cs160
+  480  ls
+  481  cd codegen/
+  482  ls
+  483  ll
+  484  emacs codegen.cpp
+  485  ls
+  486  exit
+  487  ls
+  488  cd cs160
+  489  ls
+  490  cd codegen/
+  491  ls
+  492  emacs codegen.cpp
+  493  ls
+  494  cd cs160
+  495  ls
+  496  cd cdoe
+  497  cd codegen/
+  498  ls
+  499  make
+  500  emacs codegen.cpp&
+  501  emacs ast.hpp
+  502  make
+  503  emacs ast.hpp
+  504  users
+  505  users speed
+  506  ls
+  507  cat start.c
+  508  make clean
+  509  make
+  510  emacs codegen.cpp&
+  511  make clean
+  512  make
+  513  make clean
+  514  make
+  515  emacs ast.hpp &
+  516  emacs codegen.cpp&
+  517  make clean
+  518  make
+  519  emacs codegen.cpp&
+  520  make clean
+  521  make
+  522  emacs typecheck.cpp 
+  523  make clena
+  524  make clean
+  525  make
+  526  emacs ast.hpp &
+  527  make clean
+  528  make
+  529  gcc - m32 -c -o start.o start.c
+  530  gcc -m32 -c -o start.o start.c
+  531  gcc -m32 -o start start.o simple.o
+  532  cat simple.s
+  533  ll
+  534  make clean
+  535  make
+  536  ll *simple
+  537  cat aTest.simple 
+  538  ./simple < aTest.simple 
+  539  ./simple < aTest.simple > start.s
+  540  gcc -m32 -c -o start.o start.s
+  541  ./simple < aTest.simple > simple.s
+  542  gcc -m32 -c -o simple.o simple.s
+  543  ./simple < aTest.simple
+  544  emacs codegen.cpp
+  545  make clean
+  546  make
+  547  ./simple < aTest.simple
+  548  ./simple < aTest.simple > simple.s
+  549  gcc -m32 -c -o simple.o simple.s
+  550  cat simple.o
+  551  ll
+  552  gcc -m32 -c -o start.o start.c
+  553  gcc -m32 -o start start.o simple.o
+  554  emacs simple.s
+  555  emacs start.c
+  556  ./start
+  557  ls
+  558  emacs start.c
+  559  cat start.c
+  560  start.o
+  561  start.s
+  562  cat simple.o
+  563  cat simple.s
+  564  ll
+  565  ls
+  566  emacs cExample.c
+  567  ll *.simple
+  568  emacs aTest.simple 
+  569  ./simple < aTest.simple > simple.s
+  570  gcc -m32 -c -o simple.o simple.s
+  571  gcc -m32 -c -o start.o start.c
+  572  gcc -m32 -o start start.o simple.o
+  573  ./start
+  574  emacs runTests
+  575  ./runTests
+  576  chmod u+rx runTests
+  577  ./runTests
+  578  emacs compilesample.sh 
+  579  ./compilesample.sh 
+  580  < cat compilesample.sh 
+  581  sh compilesample.sh
+  582  emacs cExample
+  583  emacs cExample.c
+  584  emacs aTest.simple
+  585  sh compilesample.sh
+  586  ./start
+  587  emacs compilesample.sh 
+  588  ./sample
+  589  cat compilesample.sh 
+  590  emacs compilesample.sh 
+  591  sh compilesample.sh
+  592  ./sample
+  593  cat aTest.simple
+  594  emacs aTest.simple
+  595  sh compilesample.sh
+  596  ./sample
+  597  emacs aTest.simple
+  598  sh compilesample.sh
+  599  ./sample
+  600  cat simple.o
+  601  cat simple.s
+  602  cat sample.s
+  603  gdb sample
+  604  gdb aTest.c
+  605  gcc -m32 -c -o simple.o simple.s
+  606  gcc -m32 -c -o start.o start.c
+  607  gcc -m32 -o start start.o simple.o
+  608  ./start
+  609  make clean
+  610  make
+  611  ./simple < aTest.simple
+  612  ./simple < aTest.simple > simple.s
+  613  gcc -m32 -c -o simple.o simple.s
+  614  gcc -m32 -o start start.o simple.o
+  615  gcc -m32 -c -o start.o start.c
+  616  make clean
+  617  gcc -m32 -c -o simple.o simple.s
+  618  gcc -m32 -c -o start.o start.c
+  619  gcc -m32 -o start start.o simple.o
+  620  ./start
+  621  cat simple.s
+  622  gcc -m32 -c -o simple.o simple.s
+  623  make clean
+  624  make
+  625  gcc -m32 -c -o simple.o simple.s
+  626  gcc -m32 -c -o start.o start.c
+  627  gcc -m32 -o start start.o simple.o
+  628  cat simple.s
+  629  ./simple < aTest.c > simple.s
+  630  ll
+  631  ./simple < aTest.sample > simple.s
+  632  ./simple < aTest.simple > simple.s
+  633  cat simple.s
+  634  make clean
+  635  make
+  636  ./simple < aTest.simple > simple.s
+  637  cat simple.s
+  638  cat aTest.simple
+  639  make clean
+  640  make
+  641  ./simple < aTest.simple > simple.s
+  642  gcc -m32 -c -o simple.o simple.s
+  643  cat simple.s
+  644  emacs ast.hpp 
+  645  gcc -m32 -c -o start.o start.c
+  646  gcc -m32 -o start start.o simple.o
+  647  ./start
+  648  make clean
+  649  make
+  650  ./simple < aTest.simple > simple.s
+  651  gcc -m32 -c -o simple.o simple.s
+  652  gcc -m32 -c -o start.o start.c
+  653  gcc -m32 -o start start.o simple.o
+  654  cat simple.s
+  655  ./start
+  656   make
+  657  sh compilesample.sh 
+  658  cat sample.s
+  659  ./start
+  660  emacs aTest.simple\
+  661  emacs aTest.simple
+  662  cat compilesample.sh
+  663  sh compilesample.sh 
+  664  ./sample
+  665  cat aTest.simple
+  666  emacs aTest.simple
+  667  sh compilesample.sh 
+  668  cat sample.s
+  669  emacs sample.s
+  670  make\
+  671  make
+  672  sh compilesample.sh 
+  673  ./sample
+  674  cat aTest.simple
+  675  emacs aTest.simple
+  676  make
+  677  sh compilesample.sh 
+  678  ./sample
+  679  cat sample.s
+  680  make
+  681  ./sample
+  682  make clean
+  683  make
+  684  ./sample
+  685  cat sample.s
+  686  make
+  687  ./sample
+  688  cat aTest.simple
+  689  make
+  690  sh compilesample.sh 
+  691  ./sample
+  692  emacs aTest.simple
+  693  make
+  694  sh compilesample.sh 
+  695  make
+  696  ./sample
+  697  cat aTest.simple
+  698  emacs aTest.simple
+  699  make
+  700  sh compilesample.sh 
+  701  ./sample 
+  702  emacs aTest.simple
+  703  make
+  704  sh compilesample.sh 
+  705  ./sample 
+  706  emacs README.txt
+  707  emacs aTest.simple
+  708  make
+  709  ./sample
+  710  sh compilesample.sh 
+  711  make
+  712  sh compilesample.sh 
+  713  cat sample.simple
+  714  cat sample.s
+  715  make clean
+  716  mak
+  717  make
+  718  sh compilesample.sh 
+  719  emacs sample.s
+  720  emacs sample.o
+  721  cat compilesample.sh
+  722  emacs aTest.simple
+  723  make
+  724  sh compilesample.sh 
+  725  ./sample
+  726  emacs aTest.simple
+  727  make
+  728  ./sample
+  729  emacs aTest.simple
+  730  make
+  731  sh compilesample.sh 
+  732  make
+  733  emacs aTest.simple
+  734  make
+  735  sh compilesample.sh 
+  736  emacs typecheck.cpp
+  737  ssh syeshanov@eyore.cs.ucsb.edu
+  738  ssh syeshanov@eeyore.cs.ucsb.edu
+  739  ls
+  740  cd ls
+  741  emacs typecheck.cpp
+  742  make clean
+  743  make
+  744  sh compilesample.sh 
+  745  ./sample
+  746  emacs aTest.simple
+  747  emacs typecheck.cpp
+  748  make
+  749  cat aTest.simple
+  750  sh compilesample.sh 
+  751  ./sample
+  752  make
+  753  sh compilesample.sh 
+  754  ./sample
+  755  emacs aTest.simple
+  756  make
+  757  sh compilesample.sh 
+  758  emacs aTest.simple
+  759  make
+  760  sh compilesample.sh 
+  761  ./sample
+  762  cat aTest.simple
+  763  emacs aTest.simple
+  764  make
+  765  sh compilesample.sh 
+  766  ./sample
+  767  emacs aTest.simple
+  768  sh compilesample.sh 
+  769  ./sample
+  770  emacs aTest.simple
+  771  emacs README.txt
+  772  cd ..
+  773  pws
+  774  pwd
+  775  turnin proj5@cs160 codegen/
+  776  ls
+  777  cd cs160
+  778  ls
+  779  cd codegen/
+  780  ls
+  781  ./simple < aTest.simple > testfile.dot
+  782  dot -Tps < testfile.dot > testfile.ps
+  783  cd ..
+  784  ls
+  785  cd ast
+  786  ls
+  787  emacs testfile1.simple
+  788  ls
+  789  man ls
+  790  ls -a
+  791  ls
+  792  cd Desktop/
+  793  ls
+  794  cd firefox.desktop
+  795  cd ..
+  796  ls
+  797  rm -r. mozilla
+  798  rm -r . mozilla
+  799  rm -r mozilla
+  800  rm -r mozilla/
+  801  cd Desktop/
+  802  rm -r mozilla/
+  803  rm -r. mozilla/
+  804  rm -r . mozilla/
+  805  ls
+  806  cd ..
+  807  cd .mozilla
+  808  ls
+  809  cd ..
+  810  rm -r .mozilla/
+  811  ls
+  812  man ip
+  813  ifconfig -a
+  814  man ip
+  815  ip -stats
+  816  ip -statistics
+  817  ip -s
+  818  ip -s link
+  819  ip -s addr
+  820  ip -s addrlabel
+  821  ip -s rule
+  822  ip -s maddr
+  823  ip addr
+  824  ip -d addr
+  825  ip xfrm
+  826  ip netns
+  827  ip l2tp
+  828  ip addr
+  829  ip maddr
+  830  arp -a
+  831  exit
+  832  ifconfig -a
+  833  arp -a
+  834  man arp -a
+  835  arp -d 
+  836  arp -d google.com
+  837  man arp -a
+  838  arp -d 128.111.43.1
+  839  arp -a
+  840  man arp
+  841  ifconfig
+  842  ipconfig
+  843  ip link
+  844  man ip
+  845  ip -s
+  846  ip link -s
+  847  ip -s link
+  848  ip link
+  849  arp
+  850  ip neighbor
+  851  arp -a
+  852  man arp
+  853  arp -s
+  854  arp -s 128.111.43.2
+  855  arp -s 38:60:77:0e:38:5b
+  856  arp -s 52:54:00:06:c8:f1
+  857  ping google.com
+  858  arp -a
+  859  ping cs.ucsb.edu
+  860  man ping
+  861  arp -a
+  862  ping tinybuddha.com
+  863  man ping
+  864  ping -c 2 tinybuddha.com
+  865  arp -a
+  866  arp static tinybuddha.com
+  867  whois tinybuddha
+  868  whois tinybuddha.com
+  869  iplookup tinybuddha.com
+  870  lookup tinybuddha.com
+  871  dig tinybuddha.com
+  872  nslookup tinybuddha.com
+  873  arp static google.com
+  874  man arp
+  875  arp -a
+  876  undo arp 128.111.43.1
+  877  arp 128.111.43.2
+  878  arp -a
+  879  man arp
+  880  arp hw_addr -set 128.111.43.2
+  881  arp hw_addr --set 128.111.43.2
+  882  arp hw_addr -s 128.111.43.2
+  883  arp 00:32:41:56 -s 128.111.43.2
+  884  arp 00:32:41:56:45 -s 128.111.43.2
+  885  arp 00:32:41:56:45:fc -s 128.111.43.2
+  886  arp -d 128.111.43.1
+  887  arp -v hw_addr -s 128.111.43.2
+  888  arp -v 128.111.43.1 -s 128.111.43.2
+  889  arp -v 90:6f:14:64:86:86 -s 128.111.43.2
+  890  arp -v -s 90:6f:14:64:86:86 128.111.43.2
+  891  arp -v -s 128.111.43.2 90:6f:14:64:86:86
+  892  arp -a
+  893  ping -c 3 128.111.43.2
+  894  ping -c 3 128.111.43.3
+  895  arp -a
+  896  ping 128.111.43.12
+  897  ping -c 3 128.111.43.23
+  898  ping -c 3 128.111.43.24
+  899  ping -c 3 128.111.43.17
+  900  ping -c 3 cs.ucsb.edu
+  901  arp -a
+  902  ip neighbor
+  903  arp -a
+  904  exit
+  905  ls
+  906  mkdir cs170
+  907  cd cs170
+  908  ls
+  909  emacs hw.c
+  910  gcc hw.c
+  911  emacs hw.c
+  912  gcc hw.c
+  913  emacs hw.c
+  914  gcc hw.c
+  915  emacs hw.c
+  916  gcc hw.c
+  917  gcc lpthread hw.c
+  918  gcc -pthread hw.c
+  919  ./hw.c
+  920  chmod +x hw.c
+  921  ./hw.c
+  922  emacs hw.c
+  923  gcc hw.c
+  924  gcc -pthread -o hw hw.c
+  925  ./hw.c
+  926  ./hw
+  927  gcc hw.c
+  928  gcc -pthread hw.c
+  929  ./hw
+  930  emacs hw.c
+  931  gcc -pthread hw.c
+  932  ./hw
+  933  ./hw.c
+  934  gcc -pthread hw.c
+  935  a.out
+  936  ./a.out
+  937  emacs hw.c
+  938  gcc -pthread -o hw hw.c
+  939  ./hw
+  940  ls
+  941  pwd
+  942  cd .cache
+  943  cd mozilla/firefox
+  944  cd jb1673ah.default
+  945  cd Cache/E7
+  946  ls
+  947  cd Cache/
+  948  cd 2/E7
+  949  ls
+  950  cd 48A4Ed01
+  951  ls
+  952  man netstat
+  953  man ss
+  954  man netstat
+  955  man ss
+  956  ss -a
+  957  man ss
+  958  ss -o
+  959  ss -status
+  960  ss -state
+  961  netstat
+  962  ss -a > test.txt
+  963  grep lo0 test.txt
+  964  grep "lo0" test.txt
+  965  emacs test.txt
+  966  dig bach.cs.depaul.edu
+  967  man dig
+  968  dig -t mx
+  969  dig -t mx hotmail.com
+  970  man dig
+  971  dig -t -x mx hotmail.com
+  972  man dig
+  973  dig -x hotmail.com
+  974  dig hotmail.com
+  975  dig -t mx hotmail.com
+  976  dig -t -x mx hotmail.com
+  977  dig -t -x MX hotmail.com
+  978  dig hotmail.com MX
+  979  dig -x hotmail.com MX
+  980  dig hotmail.com MX
+  981  dig hotmail.com
+  982  dig hotmail.com MX
+  983  dig -x hotmail.com MX
+  984  dig -t -x hotmail.com MX
+  985  dig -t -x MS hotmail.com
+  986  dig -t -x MX hotmail.com
+  987  dig -x hotmail.com MX
+  988  dig -t -x hotmail.com MX
+  989  dig -t -x MX hotmail.com
+  990  dig -t MX hotmail.com
+  991  dig -t MX hotmail.com -x
+  992  dig -x -t MX hotmail.com
+  993  dig -t -x MX hotmail.com
+  994  dig -t MX -x hotmail.com
+  995  dig hotmail.com MX
+  996  dig -x hotmail.com MX
+  997  dig -x MX hotmail.com
+  998  dig -x hotmail.com
+  999  dig -x hotmail.com MX
+ 1000  dig hotmail.com
+ 1001  ls
+ 1002  cd cs170
+ 1003  ls
+ 1004  man execvp
+ 1005  emacs jshell.c
+ 1006  ./cs/faculty/rich/public_html/class/cs170/labs/lab1/jshell
+ 1007  cd /cs/faculty/rich/public_html/class/cs170/labs/lab1/\
+ 1008  cd /cs/faculty/rich/public_html/class/cs170/labs/lab1/
+ 1009  ls
+ 1010  ./jshell
+ 1011  ls
+ 1012  cd ..
+ 1013  sls
+ 1014  ls
+ 1015  cd ..
+ 1016  pwd
+ 1017  ls
+ 1018  pwd
+ 1019  cd
+ 1020  ls
+ 1021  cd cs160
+ 1022  cd ..
+ 1023  cd cs170
+ 1024  ls
+ 1025  emacs jshell.c
+ 1026  ls
+ 1027  pwd
+ 1028  gcc -g -I/cs/student/davidborden/cs170 -c jshell.c
+ 1029  ls
+ 1030  gcc -g -o jshell jshell.o /cs/student/davidborden/cs170/objs/libfdr.a
+ 1031  gcc -g -o jshell jshell.o /cs/student/davidborden/cs170/libfdr.a
+ 1032  ls
+ 1033  make
+ 1034  ls
+ 1035  emacs jshell.c
+ 1036  ls
+ 1037  print words rex-1.txt
+ 1038  printwords rex-1.txt
+ 1039  gcc -o jshell jshell.c
+ 1040  make
+ 1041  make clean
+ 1042  make
+ 1043  gcc -o jshell jshell.c
+ 1044  emacs jshell.c
+ 1045  ls
+ 1046  gcc -l jshell jshell.c
+ 1047  gcc -l jshell.c fields.c
+ 1048  make
+ 1049  printwords rex-1.txt
+ 1050  gcc -o jshell jshell.c
+ 1051  ./jshell
+ 1052  gcc -l fields.h
+ 1053  gcc -l fields.c
+ 1054  gcc -l fields.h jshell.c
+ 1055  gcc -o jshell jshell.c -l$fields.h
+ 1056  gcc -o jshell jshell.c -l fields.h
+ 1057  gcc -o jshell jshell.c -lfields.h
+ 1058  gcc -o jshell jshell.c -Lfields.h
+ 1059  pwd
+ 1060  gcc -o jshell jshell.c -L/cs/student/davidborden/cs170/fields.h
+ 1061  gcc -o jshell jshell.c -L/cs/student/davidborden/cs170/fields.c
+ 1062  make clean
+ 1063  make
+ 1064  gcc -o jshell jshell.c -L/cs/student/davidborden/cs170/fields.c
+ 1065  gcc -o jshell jshell.c -L/cs/student/davidborden/cs170/fields.h
+ 1066  emacs jshell.c&
+ 1067  gcc -lfields.h
+ 1068  gcc jshell.c -lfields.h -o jshell
+ 1069  ls
+ 1070  gcc -o fields.c fields
+ 1071  gcc -o fields fields.c
+ 1072  ls
+ 1073  make clean
+ 1074  gcc jshell.c -llibfdr.a -o jshell
+ 1075  gcc -c -I jshell.c
+ 1076  ls
+ 1077  gcc -c -I jshell.c
+ 1078  make
+ 1079  ls
+ 1080  gcc -c -I/libfdr.a jshell.c
+ 1081  ls
+ 1082  gcc -o jshell jshell.c
+ 1083  gcc -o jshell jshell.c -l/libfdr.a
+ 1084  gcc -o jshell jshell.c -llibfdr.a
+ 1085  ls
+ 1086  make clean
+ 1087  ls
+ 1088  gcc -c -I fields.h jshell.c
+ 1089  gcc -c -I/fields.h jshell.c
+ 1090  ls
+ 1091  gcc -o jshell jshell.o -L./fields.h
+ 1092  make clean
+ 1093  ls
+ 1094  make
+ 1095  ls
+ 1096  gcc -o jshell jshell.c
+ 1097  ls
+ 1098  gcc jshell.c -o jshell
+ 1099  gcc jshell.c -o jshell.o
+ 1100  gcc -o jshell jshell.o
+ 1101  pwd
+ 1102  gcc -Ics/student/davidborden/cs170/fields.h jshell.c -o jshell
+ 1103  make clean
+ 1104  make
+ 1105  ls
+ 1106  pwd
+ 1107  gcc -c -I/cs/student/davidborden/cs170 jshell.c
+ 1108  ls
+ 1109  gcc -o jshell jshell.o -Lcs/student/davidborden/cs170 -llibfdr.a
+ 1110  ll
+ 1111  gcc -o jshell jshell.o -Lcs/student/davidborden/cs170 -lfields.h
+ 1112  gcc -o jshell jshell.o -Lcs/student/davidborden/cs170 -lfields.o
+ 1113  gcc -o jshell jshell.o -Lcs/student/davidborden/cs170 libfdr.a
+ 1114  ls
+ 1115  ./jshell
+ 1116  ./jshell hello world
+ 1117  printwords hello world
+ 1118  printwords NULL
+ 1119  printwords rex-1.txt
+ 1120  ls
+ 1121  ./jshell
+ 1122  ./jshell printwords rex-1.txt
+ 1123  emacs j*.c
+ 1124  emacs jshe..c
+ 1125  emacs jshell.c
+ 1126  ./jshell
+ 1127  ./jshell rex-1.txt
+ 1128  emacs rex-1.txt 
+ 1129  ./jshell rex-1.txt
+ 1130  cat hw.c
+ 1131  cat hw.c > test.txt
+ 1132  cat test.txt
+ 1133  cat hw.c | test1.txt
+ 1134  cat hw.c | cat -10
+ 1135  cat hw.c | cat 
+ 1136  cat hw.c > cat 
+ 1137  cat hw.c >> cat 
+ 1138  cat hw.c | cat 
+ 1139  cat hw.c | head
+ 1140  cat hw.c > head
+ 1141  main wait
+ 1142  man wait
+ 1143  man ls
+ 1144  ls
+ 1145  ls ../../..
+ 1146  ls
+ 1147  pwd
+ 1148  ls
+ 1149  man ls
+ 1150  cd /cs/faculty/rich/public_html/class/cs170/labs/lab1/
+ 1151  ./jshell
+ 1152  ./jshell hi
+ 1153  ls
+ 1154  cd
+ 1155  ls
+ 1156  cd cs17-
+ 1157  cd cs170
+ 1158  ls
+ 1159  emacs jshell.c
+ 1160  cd /cs/faculty/rich/public_html/class/cs170/labs/lab1/
+ 1161  ls
+ 1162  ./jshell sdklfm;lasdkfmasdklf
+ 1163  cd
+ 1164  cd cs170
+ 1165  ls
+ 1166  emacs jshell.c
+ 1167  emacs jshell.c &
+ 1168  cd /cs/faculty/rich/public_html/class/cs170/labs/lab1/
+ 1169  ./jshell testprompt hi
+ 1170  ls
+ 1171  cd
+ 1172  cd cs170
+ 1173  ls
+ 1174  make clean
+ 1175  make
+ 1176  ls
+ 1177  gcc -o jshell jshell.c -l libfdr.a
+ 1178  gcc -o jshell jshell.c -lcs170 libfdr.a
+ 1179  gcc -o jshell jshell.c -llibfdr.a
+ 1180  gcc -o jshell jshell.c -l libfdr.a
+ 1181  gcc -o jshell jshell.c -lcs170/libfdr.a
+ 1182  gcc -o jshell jshell.c -L/cs/student/davidborden/cs170 libfdr.a
+ 1183  gcc -o jshell.o -l libfdr.a
+ 1184  gcc -o jshell jshell.o -l libfdr.a
+ 1185  ls
+ 1186  gcc -c jshell.c
+ 1187  ls
+ 1188  gcc -o jshell jshell.o 
+ 1189  gcc -c -I/cs/student/davidborden/cs170 jshell.c
+ 1190  grep "-I"
+ 1191  cat | history > history.txt
+ 1192  history
+ 1193  history > history.txt

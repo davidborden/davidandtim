@@ -1,0 +1,165 @@
+// Timothy Fok
+// David Borden
+// CS 170
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "fields.h"
+#include <unistd.h>
+#include <sys/types.h>
+#include "command.h"
+/*
+struct command{
+  char* the_command;
+  int isRedirect;
+  char* inFile;
+  char* outFile;
+  char* arguments[128];
+  int num_of_command_args;
+  int isFirst;
+  int isLast;
+  struct command *next;
+};
+*/
+int main( int argc,  char* argv[] )
+{
+  struct command cs;
+  cs.num_of_command_args = -1;
+  char *prompt = "Jsh: ";
+  IS is;
+  int i;
+  
+  //checks if there is more than 1 command line arg
+  if (argc > 2) {
+    fprintf(stderr, "usage, ./jshell <prompt>");
+    exit(1);
+  }
+  else if (argc == 2){
+    prompt = argv[1];
+    strcat ( prompt , " ");
+  }
+  
+  while(1){
+    printf("%s", prompt);
+    
+    int c =  getchar();
+    //if EOF char (1), exit program
+    if ( c == -1)
+      exit(0);
+    //else if \n char, reset the while loop
+    else if (c == 10)
+      continue;
+    //else put the char back in stdin as if the getchar() check never happened. 
+    else {
+      printf("putchar \n");
+      ungetc(c,stdin);
+    }
+
+    is = new_inputstruct(NULL);
+    get_line(is);
+
+    //create pipeline using pipe()
+    //pfd[0] is for reading, [1] is for writing, 
+    //output of fd[1] becomes input for fd[0]
+    //learned at http://www.tldp.org/LDP/lpg/node11.html
+    int pfd[2];
+    //pipe(pfd);
+
+    // for debugging purposes, prints out stdin using fields library
+    for (i = 0; i < is->NF; i++)
+      printf("%d: %s\n", is->line, is->fields[i]);
+
+    int num_of_args = is->NF;
+    int pid, status;
+    char **commandarray;
+    commandarray = (char **) malloc(sizeof(char *)*num_of_args+1);
+
+    // Q: should we check to see if there is anything else written?
+    // A: exit ls, exits program
+    // A: ls exit does NOT exit
+    // watch out for zombies!
+    //printf("the inputted command is: %s ",command);
+  
+    // by convention the first argument is the command / file itself
+    //printf("num of args is: %d" ,num_of_args);
+    
+    // put real time jshell commands into commandarray
+    // so it can be ran by execvp
+    printf("the num of args is: %d ", num_of_args);
+    if (num_of_args == 1){
+      if(is->fields[0] == "<" || is->fields[0] == ">" || is->fields[0] == "|" ||
+	 is->fields[0] == "<<" || is->fields[0] == ">>"){perror("Syntax error");continue;}
+      printf("is->fields[0] is %s ", is->fields[0]);
+    }
+
+    // TODO: do we need size of linke list function?
+
+    //storing jshell command into command structure
+    //this is how we did it without the linked list
+    /*i = 0;
+    for(i; i<num_of_args; i++){
+      cs.the_command = is->fields[0];
+      cs.num_of_command_args++;
+      cs.isFirst = 0;
+      cs.isLast = 0;
+      cs.inFile = NULL;
+      cs.outFile = NULL;
+      if (num_of_args != 1) {*/
+	/*       	cs.arguments[0] = "NULL";
+      }
+      int argument_result = strcmp(cs.arguments[0], "NULL");
+      if ( argument_result == 0)
+	*/
+    /*
+ 	cs.arguments[i] = is->fields[i+1];
+      } 
+    }
+*/
+      commandarray[0] = cs.the_command;
+      for (i = 0; i < cs.num_of_command_args; i++){
+	int command_result = strcmp(cs.arguments[0], "NULL");
+	if ( command_result == 0){
+	  break;
+	}
+	commandarray[i+1] = cs.arguments[i];
+      }
+      commandarray[cs.num_of_command_args+1] = NULL;
+
+    // array MUST end in NULL
+    //  commandarray[num_of_args] = NULL;
+    
+    //check if user wants to exit jshell
+
+      add_to_list(cs.the_command);
+
+    int exit_result = strcmp(commandarray[0], "exit");
+    printf("exit_result %d \n",exit_result);
+    if ( exit_result == 0)
+      exit(0);
+
+    //fork off child process
+    if (fork() == 0) {
+      execvp(commandarray[0], commandarray);
+      perror("forkcat1");
+      exit(1);
+    }
+    //parent process
+    else {
+      wait(&status);
+    }
+    
+    free(commandarray);
+    jettison_inputstruct(is);
+    
+  }
+}
+
+// Notes section //
+/**
+
+"we're using a limit of 256 characters per input line"
+'<' redirection can go anywhere
+use WNOHANG option so you don't block waiting for background jobs
+ 
+*/

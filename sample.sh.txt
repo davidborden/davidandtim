@@ -1,0 +1,6 @@
+echo This prints to STDOUT
+echo This is redirected to a file > file1
+cat < file1
+cat file1 | sed s/a/another/ > file2
+cat file2
+rm file1 file2

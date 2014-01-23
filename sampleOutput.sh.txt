@@ -1,0 +1,4 @@
+This prints to STDOUT
+This is redirected to a file
+This is redirected to another file
+jsh: jsh: jsh: jsh: jsh: jsh: jsh: 

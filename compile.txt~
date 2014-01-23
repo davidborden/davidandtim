@@ -1,0 +1,4 @@
+#!/bin/sh
+
+gcc -g -I/cs/student/davidborden/cs170 -c jshell.c
+gcc -o jshell jshell.c -L/cs/student/davidborden/cs170 libfdr.a
